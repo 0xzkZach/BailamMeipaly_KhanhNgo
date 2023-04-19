@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Oswald', sans-serif;
+}
+
+.container {
+  /* max-width giúp chỉnh tất cả content vào giữa  */
+  /* 1400px giúp cho bố cục được bảo toàn, không bị bể nếu user coi UI trên TV, hay tablet, phone  */
+  /* ngoài ra, khi gặp UI nhỏ hơn, thì có thể tạo thanh scroll ngang  */
+  /* container không cần tạo nếu học boostrap vì trong boostrap có library  */
+  /* ngoài ra cái chuẩn 1400px sẽ còn tùy theo company, lúc vào làm đọc docs cần lưu ý  */
+  /* trên laptop của mình thì khá bự 15.6 inch, nên cần chỉnh từ 1400px thành 1140px  */
+  /* nếu không thì sẽ thấy bị hở một đoạn nhỏ hai bên trái phải  */
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.active {
+  color: red;
+}
+
+/* Header  */
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+/* bỏ riêng màu đây để phòng khi mình bọc lớp khác thì khỏi chỉnh màu  */
+header {
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid grey;
+}
+
+/* Học về flex box  */
+/* header .container {  */
+  /* background-color: black;  */
+  /* height: 500px;  */
+  /* padding: 40px 0;  */
+  /* thuộc tính display flex giúp cho các phần tử nằm bên trong thẻ cha được 
+  nằm trên cùng một dòng theo trục chính  */
+  /* display: flex;  */
+  /* thuộc tính justify-content giúp căn chỉnh các thành phần con bên trong theo trục chính */
+  /* (ở đây là trục ngang)  */
+  /* center cho các thành phần nằm giữa  */
+  /* justify-content: center;  */
+  /* space-between canh thành phần đầu và cuối nằm qua hai bên  */
+  /* space-around thì làm đều qua hai bên  */
+  /* justify-content: space-between;  */
+  /* align-items căn chỉnh theo trục dọc  */
+  /* align-items: flex-start; này thì phải căn chỉnh thêm attribute height mới rõ */
+  /* align-items: center;   */
+  /* muốn trục dọc hoặc ngang là trục chính thì dùng flex-direction: ;  */
+  /* flex-direction: row-reserve thì làm ngược hướng trên dòng, ví dụ là logo đổi sang bên phải */
+  /* flex-direction: column;  */
+/* }  */
+
+header .header_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul li {
+  display: inline;
+  margin-right: 25px;
+}
+
+
+header .header_content .header_logo i {
+  font-size: 40px;
+  /* font-size: 1.5rem; rem đơn vị đo ít dùng, 1rem = font-size default trong * {} */
+}
+
+header .header_content .header_logo span {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* giúp khi di chuột vào thì đổi sang red từ từ chậm rãi  */
+header nav ul li a {
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+
+header nav ul li a:hover{
+  color: red;
+} 
+
+
+/* Banner  */
+.banner {
+  background-image: url(./../img/home_slider.jpg);
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.banner .banner_content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+.banner .banner_content h1 {
+  font-size: 75px;
+  line-height: 90px;
+}
+
+.banner .banner_content .sub_title {
+  font-size: 25px;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+}
+
+.banner .banner_content button:hover {
+  background-color: #af2239;
+}
+
+/* Sevices */
+.services {
+  background-color: black;
+}
+
+
+
+/* $(document).ready(function () {
+  $('.your-class').slick({
+
+  });
+}); */
